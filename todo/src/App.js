@@ -1,12 +1,17 @@
-import React from 'react';
-
+import React from "react";
+import { initialState } from "./reducers/reducer";
+import { reducer } from "./reducers/reducer";
 
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+  const [{ todos }, dispatch] = useReducer(reducer, initialState);
+  const [text, setText] = useState();
+  console.log(todos);
+
+  return( 
+  <div className="App">
+
+  </div>
+  )
 }
 
 export default App;

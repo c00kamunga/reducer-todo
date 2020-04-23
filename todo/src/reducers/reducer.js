@@ -20,6 +20,14 @@ export const reducer = (state, action) => {
         ],
         todoCount: state.todoCount + 1,
       };
-      
+      case "toggle-todo":
+        return {
+          ...state,
+          todos: state.todos.map((t, idx) => 
+          idx === action.payload ? { ...t, completed: !t.completed} : t
+          ),
+        };
+
+        
   }
 }

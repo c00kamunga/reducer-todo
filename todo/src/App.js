@@ -8,8 +8,14 @@ function App() {
   console.log(todos);
 
   return( 
-  <div className="App">
-
+  <div>
+<form onSubmit={e => {
+  e.preventDefault();
+  dispatch({ type: "add-todo", payload: text })
+  setText("");
+}}>
+  <input value={text} onChange={e => setText(e.target.value)}/>
+</form>
   </div>
   )
 }

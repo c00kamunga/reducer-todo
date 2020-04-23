@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useReducer} from "react";
 import { initialState } from "./reducers/reducer";
 import { reducer } from "./reducers/reducer";
 
@@ -27,6 +27,12 @@ function App() {
     {t.item}
     </div>
 ))}
+<button onClick={() => dispatch ({ type: "delete-todo" })}>
+  Delete All
+</button>
+<button onClick = {() => dispatch({ type: "delete-strikes" })}>
+  Delete Striked todos
+</button>
   </div>
   )
 }

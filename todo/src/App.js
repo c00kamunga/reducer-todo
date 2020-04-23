@@ -16,6 +16,17 @@ function App() {
 }}>
   <input value={text} onChange={e => setText(e.target.value)}/>
 </form>
+{todos.map((t, idx) => (
+  <div
+  key={t.text}
+  onClick={() => dispatch({ type: "toggle-todo", payload: idx})}
+  style={{
+    textDecoration: t.completed ? "line-through" : ""
+  }}
+  >
+    {t.item}
+    </div>
+))}
   </div>
   )
 }
